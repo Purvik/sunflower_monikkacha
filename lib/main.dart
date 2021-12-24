@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sunflower/pages/dashboard/dashboard.dart';
 import 'package:sunflower/pages/home/home_page.dart';
 import 'package:sunflower/services/api_services.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const Dashboard(),
     );
   }
 }

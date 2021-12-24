@@ -10,7 +10,7 @@ class ApiService {
 
   static void init() async {
     _dio = Dio();
-    _dio.options.headers["Content-Type"] = "application/x-www-form-urlencoded";
+    _dio.options.headers["Content-Type"] = "application/json; charset=UTF-8";
   }
 
   static Future<dynamic> _postRequest(
@@ -80,6 +80,12 @@ class ApiService {
   static Future<Response> getPostData() async {
     var response =
     await _getRequest(endpoint:  ApiEndpoints.POSTS);
+    return response;
+  }
+
+  static Future<Response> addPost({required data}) async {
+    var response =
+    await _postRequest(endpoint:  ApiEndpoints.POSTS , param: data);
     return response;
   }
 }
